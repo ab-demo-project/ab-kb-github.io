@@ -20,7 +20,7 @@ html, body {
   font-weight: 900;
   color: var(--primary-color);
   font-size: 1.4em;
-  grid-column: 3;
+  grid-column: 4;
 }
 
 .logo__thin {
