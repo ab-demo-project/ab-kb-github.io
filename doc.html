@@ -13,40 +13,30 @@
   </head>
   <body>
     <div class="doc__bg"></div>
-    <div class="header">
-      <h1 class="logo"> Azure | <span class="logo__thin">Base Deployment</span></h1>
-    </div>
+    <nav class="header">
+      <h1 class="logo"> Azure Virtual Machine | <span class="logo__thin">Base Deployment</span></h1>
+    </nav>
     <div class="wrapper">
       <aside class="doc__nav">
         <ul>
-          <li class="js-btn selected">Get Started</li>
-          <li class="js-btn">Configuration</li>
-          <li class="js-btn">Keybindings</li>
-          <li class="js-btn">Issues</li>
+          <li class="js-btn selected">Pre-requisites</li>
+          <li class="js-btn">Assumptions</li>
+          <li class="js-btn">Synapsis</li>
+          <li class="js-btn">Input Parameters</li>
         </ul>
       </aside>
       <article class="doc__content">
         <section class="js-section">
-          <h3 class="section__title">Get Started</h3>
-          <p>Learn how to configure settings for Scribbler, such as your syntax highlighting preference and the default saving folder location.</p>
-          <h3 class="section__title">Installation</h3>
-          <div class="code__block code__block--notabs">
-            <pre class="code code--block">
-              <code>
-                $ scribbler  ——config
-                  {
-                    “encryption”: true, 
-                    “highlighting“: true,
-                    “prettyTable”: false,
-                    “font”: [“Helvetica”, “sans-serif”],
-                    “folder”: “~/Desktop“
-                  }
-              </code>
-            </pre>
-          </div>
+          <h3 class="section__title">Pre-requisites</h3>
+          <ol>
+            <li>Azure Storage Account and file share to be created to store the post build logs, health check scan report and script</li>
+            <li>Azure DevOps should have sufficient privilage to sync with GitHub and exectue the pipeline tasks</li>
+            <li>Key Vault to store all credentials as secrets</li>
+            <li>Log Analytics Workspace to link with Automation Account, this will capture all the jobs and used install update management agent in vm for patch update</li>
+          </ol>
         </section>
         <section class="js-section">
-          <h3 class="section__title">Configuration</h3>
+          <h3 class="section__title">Assumptions</h3>
           <p>Learn how to configure settings for Scribbler, such as your syntax highlighting preference and the default saving folder location.</p>
           <table id="customers">
             <tr>
