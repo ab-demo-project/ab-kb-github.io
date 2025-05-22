@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>
+                VM Provision
+            </title>
+            <link rel="stylesheet" href="default.css">
+        </head>
+        <body>
+            <h1> 
+                Azure Virtual Machine Provision
+            </h1>
+
+            <!--Table of Contents-->
+            <details>
+                <summary><b>Table of Contents</b></summary>
+                <ol>
+                    <li><a>Objectives</a></li>
+                    <li><a>Synopsis</a></li>
+                    <li><a>Input Parameters</a></li>
+                    <li><a>Author Information</a></li>
+                </ol>
+            </details>
+
+            <!--Objectives-->
+            <dl>
+                <dt><b>Objectives</b></dt>
+                <p>This is process document explaining the worflow of virtual machine provisioning in azure infrastructue with end to end automation includes below list of tasks </p>
+                <ul>
+                    <li>SNOW Catalog Request Submittion</li>
+                    <li>Creating Virtual Machine</li>
+                    <li>Perform Postbuild Activity</li>
+                </ul>
+            </dl>
+
+            <!-- SYNOPSIS-->
+            <dl>
+                <dt><b>Synopsis:</b></dt>
+                    <ul>
+                        <li>This is the process to provison virtual machine in azure (Windows/Linux operating system).</li>
+                        <li>This automation workflow will perform post build activities and validate the virtual machine.</li>
+                        <li>End user will submit service request with all the required virtual machine specifications.</li>
+                        <li>Once the reqeuest is approved in SNOW,the catalog will trigger the Azure pipeline automatically.</li>
+                        <li>The pipeline will then executes the task in one by one.</li>
+                        <li>Logic App is integrated with SNOW to perform ticket Creation/Updation/Closure.</li>
+                        <li>Engineer to update the raw github url with token in keyvault.</li>
+                        <li>All credentials are stored in keyvault.</li>
+                    </ul>
+            </dl> 
+
+            <!--Input Parameters-->
+            <dl>
+                <dt><b>Input Parameters:</b></dt>
+                    <table>
+                        <tr>
+                            <th><b>Parameter</b></th>
+                            <th><b>Type</b></th>
+                            <th><b>Description</b></th>
+                            <th><b>Required</b></th>
+                        </tr>
+                        <tr>
+                            <td>subscription</td>
+                            <td><i>String</i></td>
+                            <td>Provide the subscription id</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>resource_group</td>
+                            <td><i>String</i></td>
+                            <td>Provide the resource group name</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>region</td>
+                            <td><i>String</i></td>
+                            <td>Provide the reagion</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>environment</td>
+                            <td><i>String</i></td>
+                            <td>Provide the environment name <i>DEV, NON-PROD, or PPROD</i></td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>managed</td>
+                            <td><i>String</i></td>
+                            <td>Choose yes or no to define it is managed by client</td>
+                            <td>Yes</td>
+                        </tr>
+                    </table>
+            </dl>
+
+            <!--Author Information-->
+            <dl>
+                <dt><b>Author Information</b></dt>
+                <p>Anand Babu P </p>
+            </dl>
+            <p><a href="README.md">readme</a></p>
+        </body>
+    </html>
