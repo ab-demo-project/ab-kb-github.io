@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAROOSHA Studio - Professional Audio & Performance Venue</title>
+    <title>RedSound Studio - Professional Audio & Performance Venue</title>
     <style>
         * {
             margin: 0;
@@ -12,13 +12,16 @@
         }
 
         :root {
-            --primary-red: #dc2626;
-            --dark-red: #991b1b;
-            --light-red: #ef4444;
+            --primary-red: #8B0000;
+            --dark-red: #660000;
+            --light-red: #A52A2A;
+            --gold: #D4AF37;
+            --light-gold: #F7DC6F;
+            --dark-gold: #B8860B;
             --white: #ffffff;
             --gray-100: #f3f4f6;
             --gray-800: #1f2937;
-            --shadow: 0 10px 25px rgba(220, 38, 38, 0.15);
+            --shadow: 0 10px 25px rgba(139, 0, 0, 0.2);
         }
 
         body {
@@ -31,7 +34,7 @@
         /* Header */
         header {
             background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
-            color: var(--white);
+            color: var(--gold);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
@@ -51,9 +54,43 @@
         }
 
         .logo {
-            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+            max-width: 250px;
+            object-fit: contain;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Fallback text logo styles (hidden when image loads) */
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            color: var(--gold);
+        }
+
+        .logo-main {
+            font-size: 1.8rem;
+            color: var(--gold);
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-sub {
+            font-size: 0.7rem;
+            color: var(--light-gold);
+            font-weight: normal;
+            letter-spacing: 1px;
         }
 
         .nav-links {
@@ -63,23 +100,25 @@
         }
 
         .nav-links a {
-            color: var(--white);
+            color: var(--gold);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             padding: 0.5rem 1rem;
             border-radius: 25px;
+            border: 1px solid transparent;
         }
 
         .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
             transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
-            color: var(--white);
+            color: var(--gold);
             text-align: center;
             padding: 12rem 2rem 8rem;
             position: relative;
@@ -93,7 +132,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M0 500C200 600 400 400 600 500C800 600 1000 400 1000 500V1000H0V500Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat center/cover;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M0 500C200 600 400 400 600 500C800 600 1000 400 1000 500V1000H0V500Z" fill="rgba(212,175,55,0.1)"/></svg>') no-repeat center/cover;
             animation: float 6s ease-in-out infinite;
         }
 
@@ -114,6 +153,15 @@
             margin-bottom: 1rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
             animation: slideInUp 1s ease-out;
+            color: var(--gold);
+        }
+
+        .hero .hero-tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--light-gold);
+            font-style: italic;
+            animation: slideInUp 1s ease-out 0.2s both;
         }
 
         .hero p {
@@ -121,6 +169,7 @@
             margin-bottom: 2rem;
             opacity: 0.9;
             animation: slideInUp 1s ease-out 0.3s both;
+            color: var(--white);
         }
 
         @keyframes slideInUp {
@@ -135,7 +184,7 @@
         }
 
         .cta-button {
-            background: var(--white);
+            background: var(--gold);
             color: var(--primary-red);
             padding: 1rem 3rem;
             border: none;
@@ -152,8 +201,8 @@
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            background: var(--gray-100);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+            background: var(--light-gold);
         }
 
         /* Services Section */
@@ -183,7 +232,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--primary-red);
+            background: linear-gradient(90deg, var(--gold), var(--dark-gold));
             border-radius: 2px;
         }
 
@@ -212,7 +261,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
             transition: left 0.5s ease;
         }
 
@@ -223,7 +272,7 @@
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow);
-            border-color: var(--primary-red);
+            border-color: var(--gold);
         }
 
         .service-icon {
@@ -272,7 +321,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: var(--gold);
             font-size: 1.5rem;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -309,7 +358,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: var(--gold);
             font-size: 2rem;
             font-weight: bold;
         }
@@ -373,7 +422,7 @@
         }
 
         .submit-btn {
-            background: var(--white);
+            background: var(--gold);
             color: var(--primary-red);
             padding: 1rem 2rem;
             border: none;
@@ -387,7 +436,8 @@
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            background: var(--light-gold);
         }
 
         /* Footer */
@@ -443,7 +493,14 @@
 <body>
     <header>
         <nav>
-            <div class="logo">🎵 AAROOSHA Studio</div>
+            <div class="logo">
+                <img src="aaaroosha-logo.png" alt="Aaroosha Karaoke and Art Studio" width="1000px" height="1000px" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                
+                <div class="logo-text" style="display: none;">
+                    <div class="logo-main">AAROOSHA</div>
+                    <div class="logo-sub">KARAOKE AND ART STUDIO</div>
+                </div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -456,8 +513,9 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>AAROOSHA Studio</h1>
-            <p>Premium Audio Recording & Performance Venue</p>
+            <h1>AAROOSHA</h1>
+            <p class="hero-tagline">🎵 "WHERE YOUR VOICE BECOMES ART, AND ART FINDS ITS VOICE"</p>
+            <p>Karaoke and Art Studio</p>
             <a href="#contact" class="cta-button">Book Your Session</a>
         </div>
     </section>
@@ -558,14 +616,14 @@
 
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title fade-in">About AAROOSHA Studio</h2>
+            <h2 class="section-title fade-in">About Aaroosha Studio</h2>
             <div class="about-content">
                 <div class="about-text fade-in">
-                    <p>AAROOSHA Studio is a premier audio recording and performance venue, equipped with state-of-the-art technology and professional-grade equipment. We provide a comprehensive range of services for musicians, performers, content creators, and corporate clients.</p>
+                    <p>Aaroosha Karaoke and Art Studio is a premier creative venue where music meets artistry. Equipped with state-of-the-art technology and professional-grade equipment, we provide a comprehensive range of services for musicians, performers, content creators, and corporate clients.</p>
                     <br>
-                    <p>Our facility features multiple soundproof rooms, professional recording equipment, and versatile spaces that can accommodate everything from intimate karaoke sessions to large-scale productions. With years of experience in the industry, we're committed to delivering exceptional quality and service.</p>
+                    <p>Our philosophy embodies our tagline: "Where your voice becomes art, and art finds its voice." We believe every individual has a unique artistic expression waiting to be discovered and nurtured in our inspiring environment.</p>
                     <br>
-                    <p>Whether you're a seasoned professional or just starting your creative journey, AAROOSHA Studio provides the perfect environment to bring your vision to life.</p>
+                    <p>Whether you're a seasoned professional or just starting your creative journey, Aaroosha provides the perfect environment to bring your vision to life and transform your artistic dreams into reality.</p>
                 </div>
                 <div class="about-image fade-in">
                     <div class="about-placeholder">Studio Interior</div>
@@ -590,7 +648,7 @@
                     </div>
                     <div class="contact-item">
                         <span>✉️</span>
-                        <span>info@AAROOSHAstudio.com</span>
+                        <span>info@aarooshastudio.com</span>
                     </div>
                     <div class="contact-item">
                         <span>🕒</span>
@@ -620,7 +678,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 AAROOSHA Studio. All rights reserved. | Professional Audio Recording & Performance Venue</p>
+            <p>&copy; 2024 Aaroosha Karaoke and Art Studio. All rights reserved. | Where Your Voice Becomes Art</p>
         </div>
     </footer>
 
@@ -663,7 +721,7 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(220, 38, 38, 0.95)';
+                header.style.background = 'rgba(139, 0, 0, 0.95)';
             } else {
                 header.style.background = 'linear-gradient(135deg, var(--primary-red), var(--dark-red))';
             }
